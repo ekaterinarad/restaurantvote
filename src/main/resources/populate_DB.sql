@@ -23,9 +23,9 @@ INSERT INTO restaurants (id, name, menu_id)
 VALUES (100000, 'Pushkin', 100000),
        (100001, 'McDonalds', 100001);
 
-INSERT INTO votes (id, date, rest_id, username)
-VALUES (100000, '2020-01-30 10:00:00', 100000, 'user'),
-       (100001, '2020-01-31 10:00:00', 100001, 'user');
+INSERT INTO votes (id, date, time, rest_id, username)
+VALUES (100000, '2020-01-30', '10:00:00', 100000, 'user'),
+       (100001, '2020-01-31', '10:00:00', 100001, 'user');
 
 INSERT INTO dishes (id, name, price, menu_id)
 VALUES (100000, 'Burger', 100,  100001),
