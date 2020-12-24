@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true">
+
+    <!-- To enable JMX Management -->
+    <jmxConfigurator/>
+
+    <timestamp key="byDay" datePattern="yyyyMMdd'T'HHmmss"/>
+
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>D://log.txt </file>
+        <append>true</append>
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.rest" level="debug"/>
+
+
+    <root level="info">
+        <appender-ref ref="file" />
+    </root>
+
+</configuration>
