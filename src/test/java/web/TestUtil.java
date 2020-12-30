@@ -1,3 +1,4 @@
+package web;
 
 import com.rest.model.User;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

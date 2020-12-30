@@ -20,9 +20,11 @@ public class Menu {
     @Column(name = "name")
     private String name;
 
-/*    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name="dishes", joinColumns = @JoinColumn(name="menu_id"))
-    private List<Dish> dishes;*/
+/*
+    @OneToMany(fetch = FetchType.LAZY)
+
+    private List<Dish> dishes;
+*/
 
 
     public int getId() {

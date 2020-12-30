@@ -1,6 +1,9 @@
 package com.rest.model;
 
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -26,6 +29,11 @@ public class Dish {
 */
     @Column(name="price")
     private int price;
+
+/*    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "menu_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Menu menu;*/
 
     public int getPrice() {
         return price;

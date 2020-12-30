@@ -22,10 +22,19 @@
         <swagger_version>3.0.0</swagger_version>
         <jackson_datatype_version>2.12.0</jackson_datatype_version>
         <slf4j_version>1.7.30</slf4j_version>
+        <jupiter_version>5.7.0</jupiter_version>
 
     </properties>
 
     <dependencies>
+
+        <!-- swagger -->
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>3.0.0</version>
+        </dependency>
 
         <!-- Test -->
         <dependency>
@@ -48,6 +57,21 @@
             <version>2.2</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${jupiter_version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${jupiter_version}</version>
+            <scope>test</scope>
+        </dependency>
+
 
         <!-- Logging -->
 
