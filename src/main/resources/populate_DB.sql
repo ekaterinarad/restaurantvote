@@ -14,15 +14,15 @@ INSERT INTO users (username, password, enabled)
 VALUES ('user', '{bcrypt}$2a$10$QlznDgdy3WT5296BcmRdf.gDzDROoONYhtF8Rnn7lvgUI2Tu/Yy8i', 1),
        ('admin', '{bcrypt}$2a$10$cpW7ngMF433nSTS9anHUH.b/bAilv6DdwUUMbSAuzHtwYorTD5HjK', 1);
 
+INSERT INTO menus (id, name, date)
+VALUES (100000, 'Vegetarian', '2020-12-31 10:00:00'),
+       (100001, 'Luxury', '2020-12-30 10:00:00'),
+       (100002, 'Vegan', '2020-12-29 10:00:00');
+
 INSERT INTO dishes (id, name, price, menu_id)
 VALUES (100000, 'Burger', 100, 100000),
        (100001, 'Salad', 200, 100001),
        (100002, 'Apple', 300, 100000);
-
-INSERT INTO menus (id, name, date)
-VALUES (100000, 'Vegetarian', now),
-       (100001, 'Luxury', now),
-       (100002, 'Vegan', now);
 
 INSERT INTO restaurants (id, name, menu_id)
 VALUES (100000, 'Pushkin', 100000),

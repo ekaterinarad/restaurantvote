@@ -19,7 +19,7 @@
         <jackson_version>2.12.0</jackson_version>
         <hibernate_version>5.4.25.Final</hibernate_version>
         <security_version>5.4.2</security_version>
-        <swagger_version>3.0.0</swagger_version>
+        <swagger_version>2.9.2</swagger_version>
         <jackson_datatype_version>2.12.0</jackson_datatype_version>
         <slf4j_version>1.7.30</slf4j_version>
         <jupiter_version>5.7.0</jupiter_version>

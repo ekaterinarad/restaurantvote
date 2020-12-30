@@ -1,6 +1,8 @@
 package com.rest.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -20,11 +22,12 @@ public class Menu {
     @Column(name = "name")
     private String name;
 
-/*
-    @OneToMany(fetch = FetchType.LAZY)
+    @Column(name="date")
+    private LocalDateTime date;
 
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "menu_id")
     private List<Dish> dishes;
-*/
 
 
     public int getId() {
@@ -41,5 +44,21 @@ public class Menu {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
+    public void setDishes(List<Dish> dishes) {
+        this.dishes = dishes;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 }

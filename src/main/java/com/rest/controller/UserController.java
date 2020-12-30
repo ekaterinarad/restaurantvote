@@ -39,9 +39,14 @@ public class UserController {
         return voteService.getAllVotes();
     }
 
-    @GetMapping("/menus")
+   /* @GetMapping("/menus")
     public List<Menu> getAllMenus() {
         return menuService.getAllMenus();
+    }*/
+
+    @GetMapping("/menu")
+    public Menu getMenuOfToday() {
+        return null;
     }
 
 }

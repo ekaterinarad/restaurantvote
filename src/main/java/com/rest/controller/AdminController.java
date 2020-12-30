@@ -62,4 +62,10 @@ public class AdminController {
         logger.info("all dishes displayed");
         return dishService.findAll();
     }
+
+    @GetMapping("/menus")
+    public List<Menu> getMenu() {
+        logger.info("menu is displayed");
+        return menuService.getMenus();
+    }
 }
