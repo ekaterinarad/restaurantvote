@@ -25,8 +25,10 @@ public class Menu {
     @Column(name="date")
     private LocalDateTime date;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "menu_id")
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "menu_dish",
+    joinColumns = @JoinColumn(name = "menu_id"),
+    inverseJoinColumns = @JoinColumn(name = "dish_id"))
     private List<Dish> dishes;
 
 

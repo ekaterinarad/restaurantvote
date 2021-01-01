@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -17,6 +18,9 @@ public class MenuServiceImpl implements MenuService{
 
     @Override
     public Menu addMenu(Menu menu) {
+
+        menu.setDate(LocalDateTime.now());
+
         return repository.saveAndFlush(menu);
     }
 
