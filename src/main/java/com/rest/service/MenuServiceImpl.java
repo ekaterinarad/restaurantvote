@@ -1,7 +1,9 @@
 package com.rest.service;
 
 
+import com.rest.model.Dish;
 import com.rest.model.Menu;
+import com.rest.repository.IDishRepository;
 import com.rest.repository.IMenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -16,10 +18,20 @@ public class MenuServiceImpl implements MenuService{
     @Autowired
     IMenuRepository repository;
 
+    @Autowired
+    DishService dishService;
+
     @Override
     public Menu addMenu(Menu menu) {
 
         menu.setDate(LocalDateTime.now());
+        List<Dish> dishes = menu.getDishes();
+
+        for (Dish dish : dishes) {
+            if (dish.getId() == null) {
+                dishService.addDish(dish);
+            }
+        }
 
         return repository.saveAndFlush(menu);
     }

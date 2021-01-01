@@ -19,21 +19,13 @@ public class Dish {
             name = "global_seq",
             allocationSize = 1
     )
-    private int id;
+    private Integer id;
 
     @Column(name="name")
     private String name;
 
-  /*  @Column(name="menu_id")
-    private int menu_id;
-*/
     @Column(name="price")
     private int price;
-
-/*    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "menu_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Menu menu;*/
 
     public int getPrice() {
         return price;
@@ -43,11 +35,11 @@ public class Dish {
         this.price = price;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -58,14 +50,6 @@ public class Dish {
     public void setName(String name) {
         this.name = name;
     }
-
-/*    public int getMenu_id() {
-        return menu_id;
-    }
-
-    public void setMenu_id(int menu_id) {
-        this.menu_id = menu_id;
-    }*/
 
 }
 
