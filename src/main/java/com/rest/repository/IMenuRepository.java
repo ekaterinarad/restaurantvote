@@ -4,6 +4,9 @@ package com.rest.repository;
 import com.rest.model.Menu;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IMenuRepository extends JpaRepository<Menu, Integer> {
+import java.time.LocalDate;
+import java.util.List;
 
+public interface IMenuRepository extends JpaRepository<Menu, Integer> {
+List<Menu> findByDate(LocalDate date);
 }

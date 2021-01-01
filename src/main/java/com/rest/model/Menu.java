@@ -23,7 +23,7 @@ public class Menu {
     private String name;
 
     @Column(name="date")
-    private LocalDateTime date;
+    private LocalDate date;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "menu_dish",
@@ -56,11 +56,11 @@ public class Menu {
         this.dishes = dishes;
     }
 
-    public LocalDateTime getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }

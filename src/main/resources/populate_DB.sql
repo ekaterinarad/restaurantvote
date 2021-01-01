@@ -15,9 +15,9 @@ VALUES ('user', '{bcrypt}$2a$10$QlznDgdy3WT5296BcmRdf.gDzDROoONYhtF8Rnn7lvgUI2Tu
        ('admin', '{bcrypt}$2a$10$cpW7ngMF433nSTS9anHUH.b/bAilv6DdwUUMbSAuzHtwYorTD5HjK', 1);
 
 INSERT INTO menus (id, name, date)
-VALUES (100000, 'Vegetarian', '2020-12-31 10:00:00'),
-       (100001, 'Luxury', '2020-12-30 10:00:00'),
-       (100002, 'Vegan', '2020-12-30 10:00:00');
+VALUES (100000, 'Vegetarian', '2020-12-31'),
+       (100001, 'Luxury', '2020-12-30'),
+       (100002, 'Vegan', '2020-12-30');
 
 INSERT INTO dishes (id, name, price)
 VALUES (100000, 'Burger', 100),

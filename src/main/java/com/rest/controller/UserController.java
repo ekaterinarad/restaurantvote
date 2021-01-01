@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -45,8 +46,8 @@ public class UserController {
     }*/
 
     @GetMapping("/menu")
-    public Menu getMenuOfToday() {
-        return null;
+    public List<Menu> getMenuOfToday() {
+        return menuService.getMenuOfToday(LocalDate.now());
     }
 
 }

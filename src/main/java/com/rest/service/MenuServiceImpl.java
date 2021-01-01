@@ -3,17 +3,16 @@ package com.rest.service;
 
 import com.rest.model.Dish;
 import com.rest.model.Menu;
-import com.rest.repository.IDishRepository;
 import com.rest.repository.IMenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class MenuServiceImpl implements MenuService{
+public class MenuServiceImpl implements MenuService {
 
     @Autowired
     IMenuRepository repository;
@@ -24,7 +23,7 @@ public class MenuServiceImpl implements MenuService{
     @Override
     public Menu addMenu(Menu menu) {
 
-        menu.setDate(LocalDateTime.now());
+        menu.setDate(LocalDate.now());
         List<Dish> dishes = menu.getDishes();
 
         for (Dish dish : dishes) {
@@ -49,5 +48,10 @@ public class MenuServiceImpl implements MenuService{
     @Override
     public List<Menu> getMenus() {
         return repository.findAll(Sort.by(Sort.Direction.ASC, "date"));
+    }
+
+    @Override
+    public List<Menu> getMenuOfToday(LocalDate date) {
+        return repository.findByDate(date);
     }
 }
