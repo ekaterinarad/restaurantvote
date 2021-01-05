@@ -1,6 +1,7 @@
 package com.rest.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="restaurants")
@@ -17,6 +18,7 @@ public class Restaurant {
     private int id;
 
     @Column(name="name")
+    @NotBlank
     private String name;
 
     @Column(name="menu_id")

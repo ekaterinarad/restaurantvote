@@ -1,13 +1,10 @@
 package com.rest.model;
 
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
-//@Embeddable
 @Table(name="dishes")
 public class Dish {
     @Id
@@ -22,9 +19,11 @@ public class Dish {
     private Integer id;
 
     @Column(name="name")
+    @NotBlank
     private String name;
 
     @Column(name="price")
+    @NotNull
     private int price;
 
     public int getPrice() {

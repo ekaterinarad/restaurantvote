@@ -1,19 +1,15 @@
 package com.rest.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.util.StdConverter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 
 @Entity
-@Table(name="votes")
+@Table(name = "votes")
 public class Vote {
     @Id
     @GeneratedValue(
@@ -25,28 +21,30 @@ public class Vote {
             allocationSize = 1
     )
     private int id;
-/*    @JsonSerialize(converter = LocalDateToStringConverter.class)
-    @JsonDeserialize(converter = StringToLocalDateConverter.class)*/
-    @Column(name="date")
+    /*    @JsonSerialize(converter = LocalDateToStringConverter.class)
+        @JsonDeserialize(converter = StringToLocalDateConverter.class)*/
+    @Column(name = "date")
     @JsonFormat(
             shape = JsonFormat.Shape.STRING,
             pattern = "dd-MM-yyyy")
-
+    @NotNull
     private LocalDate date;
 
-/*    @JsonSerialize(converter = LocalTimeToStringConverter.class)
-    @JsonDeserialize(converter = StringToLocalTimeConverter.class)*/
-    @Column(name="time")
+    /*    @JsonSerialize(converter = LocalTimeToStringConverter.class)
+        @JsonDeserialize(converter = StringToLocalTimeConverter.class)*/
+    @Column(name = "time")
     @JsonFormat(
             shape = JsonFormat.Shape.STRING,
             pattern = "hh:mm:ss")
-
+    @NotNull
     private LocalTime time;
 
-    @Column(name="rest_id")
+    @Column(name = "rest_id")
+    @NotNull
     private int rest_id;
 
-    @Column(name="username")
+    @Column(name = "username")
+    @NotBlank
     private String username;
 
     public int getId() {

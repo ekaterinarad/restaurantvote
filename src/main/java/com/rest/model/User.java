@@ -1,6 +1,7 @@
 package com.rest.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="users")
@@ -8,6 +9,7 @@ public class User {
 
     @Id
     @Column(name="username")
+    @NotBlank
     private String name;
 
     @Column(name="password")

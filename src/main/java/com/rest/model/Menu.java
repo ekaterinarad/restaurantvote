@@ -1,6 +1,8 @@
 package com.rest.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -20,9 +22,11 @@ public class Menu {
     private int id;
 
     @Column(name = "name")
+    @NotBlank
     private String name;
 
     @Column(name="date")
+    @NotNull
     private LocalDate date;
 
     @ManyToMany(fetch = FetchType.EAGER)
