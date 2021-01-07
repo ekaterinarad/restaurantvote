@@ -53,7 +53,7 @@ public class VoteServiceImpl implements VoteService {
     }
 
     @Override
-    public List<Vote> getAllVotes() {
-        return repository.findAll();
+    public List<Vote> getAllVotes(String name) {
+        return repository.findAllByUsername(name);
     }
 }

@@ -6,11 +6,10 @@ import org.junit.jupiter.api.Test;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static web.TestData.USER;
 import static web.TestUtil.userAuth;
 
 public class UserTest extends AbstractControllerTest{
-
-    public static final User USER = new User("user", "test1");
 
     @Test
     void getUsers() throws Exception {
@@ -19,6 +18,8 @@ public class UserTest extends AbstractControllerTest{
                 .andDo(print())
                 .andExpect(status().isOk());
     }
+
+
 
 
 }

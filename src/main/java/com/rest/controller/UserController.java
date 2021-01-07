@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -33,17 +34,12 @@ public class UserController {
         return voteService.vote(vote);
     }
 
-    @GetMapping("/all")
-    public List<Vote> getAllVotes() {
+    @GetMapping("/my-votes-history")
+    public List<Vote> getAllVotes(Principal principal) {
 
-        logger.info("All votes");
-        return voteService.getAllVotes();
+        logger.info("This user votes");
+        return voteService.getAllVotes(principal.getName());
     }
-
-   /* @GetMapping("/menus")
-    public List<Menu> getAllMenus() {
-        return menuService.getAllMenus();
-    }*/
 
     @GetMapping("/menu")
     public List<Menu> getMenuOfToday() {

@@ -9,5 +9,5 @@ public interface VoteService {
 
     Vote vote(Vote vote);
 
-    List<Vote> getAllVotes();
+    List<Vote> getAllVotes(String name);
 }

@@ -1,9 +1,15 @@
-DELETE FROM users;
-DELETE FROM AUTHORITIES;
-DELETE FROM votes;
-DELETE FROM restaurants;
-DELETE FROM menus;
-DELETE FROM dishes;
+DELETE
+FROM users;
+DELETE
+FROM AUTHORITIES;
+DELETE
+FROM votes;
+DELETE
+FROM restaurants;
+DELETE
+FROM menus;
+DELETE
+FROM dishes;
 ALTER SEQUENCE GLOBAL_SEQ RESTART WITH 100005;
 
 INSERT INTO authorities (username, authority)
@@ -30,7 +36,8 @@ VALUES (100000, 'Pushkin', 100000),
 
 INSERT INTO votes (id, date, time, rest_id, username)
 VALUES (100000, '2020-01-30', '10:00:00', 100000, 'user'),
-       (100001, '2020-01-31', '10:00:00', 100001, 'user');
+       (100001, '2020-01-31', '10:00:00', 100001, 'user'),
+       (100002, '2020-02-27', '10:00:00', 100001, 'user1');
 
 INSERT INTO menu_dish (menu_id, dish_id)
 VALUES (100000, 100000),
