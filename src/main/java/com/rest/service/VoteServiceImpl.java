@@ -33,7 +33,7 @@ public class VoteServiceImpl implements VoteService {
         v.setDate(LocalDate.now());
 
         ExampleMatcher matcher = ExampleMatcher.matching()
-                .withIgnorePaths("id")
+                .withIgnorePaths("id", "time", "rest_id")
                 .withMatcher("username", ignoreCase())
                 .withMatcher("date", ignoreCase());
 

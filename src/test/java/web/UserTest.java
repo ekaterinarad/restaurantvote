@@ -21,7 +21,7 @@ public class UserTest extends AbstractControllerTest{
 
     @Test
     void checkMyVotesHistory() throws Exception {
-        perform(get("/user/my-votes-history")
+        perform(get("/user/votes-history")
                 .with(userAuth(USER)))
                 .andDo(print())
                 .andExpect(status().isOk());
