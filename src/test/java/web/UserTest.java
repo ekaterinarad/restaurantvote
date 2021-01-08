@@ -19,7 +19,14 @@ public class UserTest extends AbstractControllerTest{
                 .andExpect(status().isOk());
     }
 
-
+    @Test
+    void checkMyVotesHistory() throws Exception {
+        perform(get("/user/my-votes-history")
+                .with(userAuth(USER)))
+                .andDo(print())
+                .andExpect(status().isOk());
+              //  .andExpect()
+    }
 
 
 }

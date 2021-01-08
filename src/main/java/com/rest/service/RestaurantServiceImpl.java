@@ -6,6 +6,8 @@ import com.rest.repository.IRestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RestaurantServiceImpl implements RestaurantService{
 
@@ -20,5 +22,10 @@ public class RestaurantServiceImpl implements RestaurantService{
     @Override
     public void deleteRestaurant(Integer id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public List<Restaurant> getRestaurants() {
+        return repository.findAll();
     }
 }

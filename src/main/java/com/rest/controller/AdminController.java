@@ -29,7 +29,7 @@ public class AdminController {
     @Autowired
     RestaurantService restaurantService;
 
-    @PostMapping(path="/dish")
+    @PostMapping("/dish")
     @ResponseBody
     public Dish addDish(@RequestBody Dish dish) {
         logger.info("dish added name = {}, price = {}", dish.getName(), dish.getPrice());
@@ -57,7 +57,7 @@ public class AdminController {
     @RequestMapping(value="/menu/{id}", method=RequestMethod.DELETE)
     public void deleteMenu(@PathVariable("id") Integer id) {menuService.deleteMenu(id);}
 
-    @GetMapping("/all")
+    @GetMapping("/dishes")
     public List<Dish> getAllDishes() {
         logger.info("all dishes displayed");
         return dishService.findAll();
@@ -65,7 +65,13 @@ public class AdminController {
 
     @GetMapping("/menu")
     public List<Menu> getMenu() {
-        logger.info("menu is displayed");
+        logger.info("all menus displayed");
         return menuService.getMenus();
+    }
+
+    @GetMapping("/restaurants")
+    public List<Restaurant> getRestaurants() {
+        logger.info("all restaurants displayed");
+        return restaurantService.getRestaurants();
     }
 }
