@@ -16,3 +16,43 @@ Build a voting system for deciding where to have lunch.
     - If it is after 11:00 then it is too late, vote can't be changed
 - Each restaurant provides a new menu each day.
 
+###Details
+
+####Users
+
+- Anonymous access is prohibited
+
+- You must have credentials to access voting system. You can use this login/password for tests:
+
+User login: user password: test1 Authorization: Basic dXNlcjp0ZXN0MQ==
+
+####Sample user's functionality:
+
+- get their voting history
+
+<pre>curl -X GET -H "Authorization: Basic dXNlcjp0ZXN0MQ==" "http://{hostname}/user/votes-history"</pre>
+
+- vote for menu
+
+<pre>curl -X POST -H "Authorization: Basic dXNlcjp0ZXN0MQ==" -H "Content-type:application/json" -d " {\"rest_id\": 100001}"  "http://localhost:8080/user/vote"</pre>
+
+
+####Admin
+
+You must use credentials to access admin features. Admin add/delete menus, dishes, and restaurants.
+
+Admin login: admin password: test2 Authorization: Basic YWRtaW46dGVzdDI=
+
+####Sample admin's functionality:
+
+- add new dish
+
+<pre>curl -X POST -H "Authorization: Basic YWRtaW46dGVzdDI=" -H "Content-type:application/json" -d " { \"name\": \"Pizza\", \"prica\": 600 } " "http://localhost:8080/admin/dish"</pre>
+
+- get all menus and dishes
+
+<pre>curl -X GET -H "Authorization: Basic YWRtaW46dGVzdDI=" "http://localhost:8080/admin/menus"</pre>
+
+- delete dish by id
+
+<pre>curl -X DELETE -H "Authorization: Basic YWRtaW46dGVzdDI=" "http://localhost:8080/admin/dish/100001"</pre>
