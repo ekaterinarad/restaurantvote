@@ -21,7 +21,7 @@ VALUES ('user', '{bcrypt}$2a$10$QlznDgdy3WT5296BcmRdf.gDzDROoONYhtF8Rnn7lvgUI2Tu
        ('admin', '{bcrypt}$2a$10$cpW7ngMF433nSTS9anHUH.b/bAilv6DdwUUMbSAuzHtwYorTD5HjK', 1);
 
 INSERT INTO menus (id, name, date)
-VALUES (100000, 'Vegetarian', '2020-12-31'),
+VALUES (100000, 'Vegetarian', '2021-01-11'),
        (100001, 'Luxury', '2020-12-30'),
        (100002, 'Vegan', '2020-12-30');
 

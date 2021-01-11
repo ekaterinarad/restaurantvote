@@ -2,7 +2,6 @@ package web;
 
 import com.rest.config.AppInit;
 import com.rest.config.SecurityConfig;
-import org.junit.jupiter.api.Assumptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
@@ -37,7 +36,7 @@ public class AbstractControllerTest {
     private void postConstruct() {
         mockMvc = MockMvcBuilders
                 .webAppContextSetup(webApplicationContext)
-             //   .addFilter(CHARACTER_ENCODING_FILTER)
+                .addFilter(CHARACTER_ENCODING_FILTER)
                 .apply(springSecurity())
                 .build();
     }
