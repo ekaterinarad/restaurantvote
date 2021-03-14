@@ -1,7 +1,7 @@
 package web;
 
 import com.google.gson.Gson;
-import com.restaurantvoting.model.Vote;
+import com.rest.model.Vote;
 import org.slf4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
