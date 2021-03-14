@@ -37,7 +37,7 @@ public class VoteServiceImpl implements VoteService {
                 .withMatcher("username", ignoreCase())
                 .withMatcher("date", ignoreCase());
 
-        Example<Vote> example = Example.of(v,matcher);
+        Example<Vote> example = Example.of(v, matcher);
         boolean exists = repository.exists(example);
 
         if (exists && LocalTime.now().isBefore(LocalTime.of(11, 0))) {

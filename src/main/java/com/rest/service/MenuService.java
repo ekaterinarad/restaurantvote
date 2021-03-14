@@ -11,8 +11,6 @@ public interface MenuService {
 
     void deleteMenu(Integer id);
 
-    List<Menu> getAllMenus();
-
     List<Menu> getMenus();
 
     List<Menu> getMenuOfToday(LocalDate date);

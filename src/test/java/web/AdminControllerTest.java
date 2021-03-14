@@ -32,7 +32,7 @@ public class AdminControllerTest extends AbstractControllerTest {
         menu.setDishes(dishes);
         Gson gson = new Gson();
         String body = gson.toJson(menu);
-        perform(post("/admin/menu")
+        perform(post("/admin/menus")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
                 .content(body)
@@ -55,7 +55,7 @@ public class AdminControllerTest extends AbstractControllerTest {
 
     @Test
     public void deleteMenu() throws Exception {
-        perform(delete("/admin/menu/100000")
+        perform(delete("/admin/menus/100000")
                 .with(userAuth(ADMIN)))
                 .andExpect(status().isOk());
         logger.info("menu deleted");

@@ -47,7 +47,7 @@ Admin login: admin password: test2 Authorization: Basic YWRtaW46dGVzdDI=
 
 - add new dish
 
-<pre>curl -X POST -H "Authorization: Basic YWRtaW46dGVzdDI=" -H "Content-type:application/json" -d " { \"name\": \"Pizza\", \"prica\": 600 } " "http://localhost:8080/admin/dish"</pre>
+<pre>curl -X POST -H "Authorization: Basic YWRtaW46dGVzdDI=" -H "Content-type:application/json" -d " { \"name\": \"Pizza\", \"prica\": 600 } " "http://localhost:8080/admin/dishes"</pre>
 
 - get all menus and dishes
 
@@ -55,4 +55,4 @@ Admin login: admin password: test2 Authorization: Basic YWRtaW46dGVzdDI=
 
 - delete dish by id
 
-<pre>curl -X DELETE -H "Authorization: Basic YWRtaW46dGVzdDI=" "http://localhost:8080/admin/dish/100001"</pre>
+<pre>curl -X DELETE -H "Authorization: Basic YWRtaW46dGVzdDI=" "http://localhost:8080/admin/dishes/100001"</pre>

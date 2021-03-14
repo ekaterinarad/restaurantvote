@@ -13,9 +13,7 @@ public class User {
     private String name;
 
     @Column(name="password")
-  //  @Transient
     private String password;
-
 
     public String getName() {
         return name;
@@ -27,10 +25,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public User(String name, String password) {

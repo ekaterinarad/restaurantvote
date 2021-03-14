@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
+    private static final LocalTime EXPIRED_TIME = LocalTime.parse("11:00");
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 

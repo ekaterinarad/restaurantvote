@@ -6,6 +6,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name="restaurants")
 public class Restaurant {
+
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,

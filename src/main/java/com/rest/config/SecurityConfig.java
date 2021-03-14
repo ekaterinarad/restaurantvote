@@ -19,23 +19,12 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 @ComponentScan
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    // add a reference to our security data source
 
     @Autowired
     private DataSource dataSource;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-		// add our users for in memory authentication
-/*
-	User.UserBuilder users = User.withDefaultPasswordEncoder();
-
-		auth.inMemoryAuthentication()
-			.withUser(users.username("john").password("test123").roles("USER"))
-			.withUser(users.username("susan").password("test123").roles("ADMIN"));*/
-
-
         auth.jdbcAuthentication().dataSource(dataSource);
     }
     @Override
@@ -44,11 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/user/**").hasRole("USER")
                 .antMatchers("/admin/**").hasRole("ADMIN")
-              //  .and()
-             //   .formLogin()
-             //   .loginPage("/showMyLoginPage")
-             //   .loginProcessingUrl("/authenticateTheUser")
-             //   .permitAll()
                 .and()
                 .logout().permitAll()
                 .and()
@@ -56,14 +40,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .httpBasic();
         http.csrf().disable();
-
     }
-/*
-
-    @Bean
-    public PasswordEncoder encoder() {
-        return new BCryptPasswordEncoder();
-    }
-*/
-
 }

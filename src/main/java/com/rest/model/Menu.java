@@ -4,12 +4,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "menus")
 public class Menu {
+
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
@@ -25,14 +25,14 @@ public class Menu {
     @NotBlank
     private String name;
 
-    @Column(name="date")
+    @Column(name = "date")
     @NotNull
     private LocalDate date;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "menu_dish",
-    joinColumns = @JoinColumn(name = "menu_id"),
-    inverseJoinColumns = @JoinColumn(name = "dish_id"))
+            joinColumns = @JoinColumn(name = "menu_id"),
+            inverseJoinColumns = @JoinColumn(name = "dish_id"))
     private List<Dish> dishes;
 
 

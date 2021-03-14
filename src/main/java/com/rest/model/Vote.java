@@ -21,8 +21,7 @@ public class Vote {
             allocationSize = 1
     )
     private int id;
-    /*    @JsonSerialize(converter = LocalDateToStringConverter.class)
-        @JsonDeserialize(converter = StringToLocalDateConverter.class)*/
+
     @Column(name = "date")
     @JsonFormat(
             shape = JsonFormat.Shape.STRING,
@@ -30,8 +29,6 @@ public class Vote {
     @NotNull
     private LocalDate date;
 
-    /*    @JsonSerialize(converter = LocalTimeToStringConverter.class)
-        @JsonDeserialize(converter = StringToLocalTimeConverter.class)*/
     @Column(name = "time")
     @JsonFormat(
             shape = JsonFormat.Shape.STRING,
@@ -63,16 +60,8 @@ public class Vote {
         this.date = date;
     }
 
-    public LocalTime getTime() {
-        return time;
-    }
-
     public void setTime(LocalTime time) {
         this.time = time;
-    }
-
-    public int getRest_id() {
-        return rest_id;
     }
 
     public void setRest_id(int rest_id) {
@@ -87,40 +76,3 @@ public class Vote {
         this.username = username;
     }
 }
-
-/*
-class LocalDateToStringConverter extends StdConverter<LocalDate, String> {
-    static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
-
-    @Override
-    public String convert(LocalDate value) {
-        return value.format(DATE_FORMATTER);
-    }
-}
-
-class StringToLocalDateConverter extends StdConverter<String, LocalDate> {
-
-    @Override
-    public LocalDate convert(String value) {
-        return LocalDate.parse(value, LocalDateToStringConverter.DATE_FORMATTER);
-    }
-}
-
-
-
-class LocalTimeToStringConverter extends StdConverter<LocalTime, String> {
-    static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM);
-
-    @Override
-    public String convert(LocalTime value) {
-        return value.format(DATE_FORMATTER);
-    }
-}
-
-class StringToLocalTimeConverter extends StdConverter<String, LocalTime> {
-
-    @Override
-    public LocalTime convert(String value) {
-        return LocalTime.parse(value, LocalDateToStringConverter.DATE_FORMATTER);
-    }
-}*/
