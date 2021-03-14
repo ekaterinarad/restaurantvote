@@ -1,7 +1,7 @@
 package web;
 
-import com.rest.config.AppInit;
-import com.rest.config.SecurityConfig;
+import com.restaurantvoting.config.AppInit;
+import com.restaurantvoting.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;

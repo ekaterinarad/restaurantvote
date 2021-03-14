@@ -1,7 +1,7 @@
 package web;
 
 import com.google.gson.Gson;
-import com.rest.model.Vote;
+import com.restaurantvoting.model.Vote;
 import org.slf4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
@@ -56,7 +56,7 @@ public class UserControllerTest extends AbstractControllerTest {
                 .andExpect(status().isOk())
         .andExpect(jsonPath("$.username").value(USER.getName()))
         .andExpect(jsonPath("$.rest_id").value(rest_id));
-        logger.info("post restaurant {}", String.valueOf(rest_id));
+        logger.info("post restaurant {}", rest_id);
     }
 
 

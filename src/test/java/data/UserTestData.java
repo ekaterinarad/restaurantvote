@@ -1,6 +1,6 @@
 package data;
 
-import com.rest.model.User;
+import com.restaurantvoting.model.User;
 
 public class UserTestData {
     public static final User USER = new User("user", "test1");

@@ -12,7 +12,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.rest" level="debug"/>
+    <logger name="com.restaurantvoting" level="debug"/>
 
 
     <root level="info">
