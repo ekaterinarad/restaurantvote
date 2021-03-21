@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"com.rest.service", "com.rest.repository", "com.rest.model"})
+@ComponentScan({"com.rest.service", "com.rest.repository"})
 @EnableJpaRepositories("com.rest.repository")
 public class DBConfig {
     @Bean

@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.List;
 
 @Configuration
-@ComponentScan({"com.rest.repository", "com.rest.controller", "com.rest.service", "com.rest.model"})
+@ComponentScan({"com.rest.repository", "com.rest.controller", "com.rest.service"})
 @EnableWebMvc
 @EnableSwagger2
 public class AppConfig implements WebMvcConfigurer {
